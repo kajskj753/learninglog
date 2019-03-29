@@ -9,5 +9,6 @@ def topics(request,topic_id):
     """显示所有主题"""
 
     topics = Topic.objects.get(id=topic_id)
-    context = {'topics':topics}
+    entries = topics.entry_set.order_by('-data_added')
+    context = {'topics':topics,'entries':entries}
     return render(request,'MyApp/topic.html',context)

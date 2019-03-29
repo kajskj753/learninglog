@@ -2,16 +2,20 @@
 
 {% block content %}
 
-   <p>Topics</p>
 
-
+  <p>Topic:{{ topics }}</p>
+    <p>Entries:</p>
     <ul>
-    {% for topic in topics %}
+    {% for entry in entries %}
     <li>
-        {{ topic }}
+    <p>    {{ entry.data_added|date:'M d,Y H:i' }}</p>
+        {{ entry.text|linebreaks }}
     </li>
-    {% empty %}
-        <li>没有添加任何主题</li>
+         {% empty %}
+        <li>
+        主题中无内容
+        </li>
+
     {% endfor %}
     </ul>
 {% endblock content %}
