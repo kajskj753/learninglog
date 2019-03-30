@@ -1,0 +1,14 @@
+{% extends 'MyApp/base.html' %}
+
+{% block content %}
+    {% if form.errors %}
+    <p>账号密码错误，请重试</p>
+    {% endif %}
+    <form action="{% url 'users:login' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="next" type="hidden" value="{% url 'MyApp:index' %}">login in </button>
+
+    </form>
+{% endblock %}
