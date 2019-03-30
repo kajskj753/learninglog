@@ -8,7 +8,7 @@ class TopicForm(forms.ModelForm):
         fields = ['text']
         labels = {'text':''}
 
-class EnterForm(forms.ModelForm):
+class EnteyForm(forms.ModelForm):
     class Meta:
         model = Entry
         fields = ['text']

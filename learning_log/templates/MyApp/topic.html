@@ -3,12 +3,13 @@
 {% block content %}
 
 
-  <p>Topic:{{ topics }}</p>
+  <p>Topic:{{ topic }}</p>
     <p>Entries:</p>
+    <p><a href="{% url 'MyApp:new_entry' topic.id %}">add a new entry</a></p>
     <ul>
     {% for entry in entries %}
     <li>
-    <p>    {{ entry.data_added|date:'M d,Y H:i' }}</p>
+    <p> {{ entry.data_added|date:'M d,Y H:i' }}</p>
         {{ entry.text|linebreaks }}
     </li>
          {% empty %}
