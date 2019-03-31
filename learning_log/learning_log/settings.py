@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MyApp',
-    'users'
+    'users',
+    'bootstrap3'
 ]
 
 MIDDLEWARE = [
@@ -122,4 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_URL = 'users:login'
-
+#django-bootstrap3的设置
+BOOTSTRAP3 = {
+    'include_jquery':True
+}
