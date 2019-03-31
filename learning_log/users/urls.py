@@ -6,6 +6,9 @@ app_name='users'
 urlpatterns = [
     #登陆页面
     re_path(r'^login/$', login,{'template_name':'users/login.html'},name = 'login'),
-    # re_path(r'^register/$',views.register,name = 'register'),
+
+    #登出页面
     re_path(r'^logout/$',views.logout,name = 'logout'),
+    #注册页面
+    re_path(r'^register/$',views.register,name = 'register'),
 ]
