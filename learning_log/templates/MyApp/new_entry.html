@@ -1,14 +1,20 @@
 {% extends 'MyApp/base.html' %}
+{% load bootstrap3 %}
 
-{% block content %}
+    {% block header %}
+<h2><a href="{% url 'MyApp:topic' topic.id %}">{{ topic }}</a></h2>
+{% endblock header %}
 
-    <p><a href="{% url 'MyApp:topic' topic.id %}">{{ topic }}</a></p>
-    <p>Add a new entry:</p>
-    <form action="{% url 'MyApp:new_entry' topic.id %}" method='post' >
+   {% block content %}
+    <h3>Add a new entry:</h3>
+    <form action="{% url 'MyApp:new_entry' topic.id %}" method='post' class="form">
 
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">add entry</button>
+   {% bootstrap_form form %}
+   {% buttons %}
+    <button name="submit" class="btn btn-primary">add topic</button>
+    {% endbuttons %}
+
 
     </form>
 

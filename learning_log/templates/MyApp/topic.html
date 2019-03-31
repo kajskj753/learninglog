@@ -8,7 +8,7 @@
 {% block content %}
 
 
-    <p><a href="{% url 'MyApp:new_entry' topic.id %}">add a new entry</a></p>
+    <h3><a href="{% url 'MyApp:new_entry' topic.id %}">Add a new entry</a></h3>
 
 
 
@@ -19,7 +19,7 @@
 
     <h3> {{ entry.data_added|date:'M d,Y H:i' }}
         <small>
-        <a href="{% url 'MyApp:edit_entry'  entry.id %}">edit entry</a>
+        <a href="{% url 'MyApp:edit_entry'  entry.id %}">Edit entry</a>
         </small>
     </h3>
         </div>
@@ -27,7 +27,7 @@
 
         </div>
          {% empty %}
-       There are no entries for this topic yet.
+      <h4>There are no entries for this topic yet.</h4>
 
     {% endfor %}
 
